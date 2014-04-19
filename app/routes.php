@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'HomeController@showHomePage');
+
+Route::resource('projects', 'ProjectsController');
