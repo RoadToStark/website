@@ -6,9 +6,8 @@
 - name
 - description
 - presentation 
-- roadmap (FK)
-- contributors (FK)
-- ressources (FK)
+- picture
+- owner (FK)
 
 **Roadmap**
 
