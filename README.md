@@ -1,2 +1,47 @@
-Site vitrine du projet Road To Stark
-Powered by Laravel
+### Models
+
+**Project**
+
+- id
+- name
+- description
+- presentation 
+- roadmap (FK)
+- contributors (FK)
+- ressources (FK)
+
+**Roadmap**
+
+- id
+- project
+- description
+- Tasks (FK)
+
+**Tasks**
+
+- id
+- beginning
+- end
+- name
+- description
+- detailed description
+- ressources (FK)
+- contributors (FK)
+
+**Ressource**
+
+- id
+- type
+- tasks
+- url
+
+**Contributor**
+
+- id
+- first name
+- last name
+- email
+- picture
+- description
+- role
+
