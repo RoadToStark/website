@@ -16,7 +16,17 @@ class Project extends Eloquent {
 	 */
 	public function user() 
 	{
-		return $this->belongsTo('User', 'owner');
+		return $this->belongsTo('User');
+	}
+
+	/**
+	 * Define the relationship for roadmaps
+	 *
+	 * @return Roadmap
+	 */
+	public function roadmap()
+	{
+		return $this->hasOne('Roadmap');
 	}
 
 	

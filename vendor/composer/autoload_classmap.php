@@ -8,12 +8,18 @@ $baseDir = dirname($vendorDir);
 return array(
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'CreateProjectsTable' => $baseDir . '/app/database/migrations/2014_04_19_133421_CreateProjectsTable.php',
+    'CreateRessourcesTable' => $baseDir . '/app/database/migrations/2014_04_19_144613_CreateRessourcesTable.php',
+    'CreateRoadmapsTable' => $baseDir . '/app/database/migrations/2014_04_19_142334_CreateRoadmapsTable.php',
+    'CreateTasksTable' => $baseDir . '/app/database/migrations/2014_04_19_143359_CreateTasksTable.php',
     'CreateUserTable' => $baseDir . '/app/database/migrations/2014_04_19_131951_CreateUserTable.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'Project' => $baseDir . '/app/models/Project.php',
+    'Ressource' => $baseDir . '/app/models/Ressource.php',
+    'Roadmap' => $baseDir . '/app/models/Roadmap.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
+    'Task' => $baseDir . '/app/models/Task.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
     'User' => $baseDir . '/app/models/User.php',
 );

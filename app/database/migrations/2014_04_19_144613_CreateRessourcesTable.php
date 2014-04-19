@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsTable extends Migration {
+class CreateRessourcesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('projects', function(Blueprint $table)
+		Schema::create('ressources', function(Blueprint $table)
 		{
 			$table->increments("id");
 
@@ -22,23 +22,19 @@ class CreateProjectsTable extends Migration {
 				->default(null);
 
 			$table
-				->string("description")
+				->string("type")
 				->nullable()
 				->default(null);
 
 			$table
-				->string("picture")
+				->integer("task")
 				->nullable()
 				->default(null);
 
 			$table
-				->longText("presentation")
+				->longText("url")
 				->nullable()
 				->default(null);
-
-			$table
-				->integer("owner")
-				->default(1);
 
             $table
                 ->dateTime("created_at")
@@ -60,7 +56,8 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists("projects");	
+		Schema::dropIfExists("ressources");	
 	}
+
 
 }
