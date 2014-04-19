@@ -15,9 +15,15 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	/**
+	 *
+	 * Get the 3 bigger projects from the database
+	 * Return home view
+	 *
+	 */
+	public function showHomePage()
 	{
-		return View::make('hello');
+		return View::make('home');
 	}
 
 }
