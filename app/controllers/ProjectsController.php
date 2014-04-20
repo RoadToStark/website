@@ -51,8 +51,16 @@ class ProjectsController extends \BaseController {
             $project->presentation = Input::get('presentation');
             $project->save();
             
+            $project_id = Project::where('name', '=', Input::get('name'))->first()->id;
+            
+            $roadmap = new Roadmap;
+            $roadmap->project      = $project_id;
+            $roadmap->description  = Input::get('description');
+            $roadmap->save();
+            
+            $roadmap_redirect = Roadmap::where('project', '=', $project_id)->first();
             Session::flash('message', 'Le projet a été créé');
-            return Redirect::to('projects');
+            return Redirect::to('roadmaps/' . $roadmap_redirect->id . '');
         }
                             
 	}

@@ -7,9 +7,9 @@
 <div id="create-project">
 	{{ Form::open(array('url' => 'projects')) }}
 
-		{{ Form::text('name', Input::old('name'), array('class' => 'title', 'placeholder' => 'Nom du projet')) }}
+		{{ Form::text('name', Input::old('name'), array('class' => 'title', 'placeholder' => 'Nom du projet', 'required' => 'required')) }}
 
-		{{ Form::text('description', Input::old('description'), array('class' => 'description', 'placeholder' => 'Courte description du projet')) }}
+		{{ Form::text('description', Input::old('description'), array('class' => 'description', 'placeholder' => 'Courte description du projet', 'required' => 'required')) }}
 		
 		<div class="features">	
 			<section class="editor">
@@ -20,7 +20,7 @@
 								&nbsp;&nbsp; Présentation détaillée 
 							</header>
 							<section class="entry-markdown-content">
-								{{ Form::textarea('presentation', Input::old('presentation'), array('class' => 'form-control')) }}
+								{{ Form::textarea('presentation', Input::old('presentation'), array('class' => 'form-control', 'required' => 'required')) }}
 							</section>
 						</section>
 						<section class="entry-preview active">
