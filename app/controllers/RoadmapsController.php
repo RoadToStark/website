@@ -26,6 +26,7 @@ class RoadmapsController extends \BaseController {
 	{
 	
 		$projects = Project::all()->lists('name', 'id');
+		
 		return View::make('roadmaps.create')
 			->with('projects', $projects);
 	}
