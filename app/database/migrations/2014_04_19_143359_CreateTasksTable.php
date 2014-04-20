@@ -36,12 +36,12 @@ class CreateTasksTable extends Migration {
 				->default(null);
 
 			$table
-                ->dateTime("starts_at")
+                ->date("starts_at")
                 ->nullable()
                 ->default(null);
 
             $table
-                ->dateTime("ends_at")
+                ->date("ends_at")
                 ->nullable()
                 ->default(null);
 

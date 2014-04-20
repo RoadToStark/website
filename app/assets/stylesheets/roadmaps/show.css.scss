@@ -1,0 +1,23 @@
+#roadmap-project {
+	text-align: center;
+	color: rgb(153, 153, 153);
+}
+
+.add-task {
+	text-align: center;
+	margin: 20px auto;
+	
+	a {
+		display: block;
+		height: 50px;
+		width: 50px;
+		color: white;
+		font-size: 40px;
+		background-color: #18191b;
+		text-decoration: none;
+		line-height: 50px;
+		font-weight: 700;
+		border-radius:5px;
+		margin: auto;
+	}
+}

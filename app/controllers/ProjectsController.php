@@ -60,7 +60,7 @@ class ProjectsController extends \BaseController {
             
             $roadmap_redirect = Roadmap::where('project', '=', $project_id)->first();
             Session::flash('message', 'Le projet a été créé');
-            return Redirect::to('roadmaps/' . $roadmap_redirect->id . '');
+            return Redirect::to('roadmaps/' . $roadmap_redirect->id . '/edit');
         }
                             
 	}

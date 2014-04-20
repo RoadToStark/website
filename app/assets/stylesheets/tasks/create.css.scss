@@ -1,0 +1,31 @@
+#create-task {
+	.form-line {
+		max-width: 70%;
+		margin: auto;
+		text-align: center;
+		
+		input {
+			width: 40%;
+			border: none;
+			padding: 5px;
+			margin-bottom: 10px;
+		}
+	}
+	
+	.features .editor .editorwrap {
+		height: 300px;
+		font-size: 80%;
+	}
+	
+	.features .editor .CodeMirror {
+		font-size: 0.9rem;
+	}
+	
+	.features .editor .cm-header {
+		font-size: 1rem;
+	}
+	
+	.submit {
+		text-align: center;
+	}
+}

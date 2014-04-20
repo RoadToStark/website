@@ -1,7 +1,15 @@
-<h1>Ici vous pouvez voir une roadmap :)</h1>
+@extends('layouts.default')
 
-<ul>
-	<li>ID : {{ $roadmap->id }} </li>
-    <li>Description : {{ $roadmap->description }} </li>
-    <li>Projet : {{ $roadmap->project()->first()->name }} </li>
-</ul>
+@section('content')
+
+<h1 id="roadmap-project">{{ $roadmap->project()->first()->name }} - Feuille de route</h1>
+<div class="add-task">
+	{{ link_to_action('TasksController@create', '+', $parameters = array('roadmap' => $roadmap->id), $attributes = array('title' => 'Ajouter une tâche')) }}
+</div>
+<div id="roadmap-tasks">
+	@foreach($tasks as $key => $task)
+		@include('tasks.resume', array('task', $task))
+	@endforeach
+</div>
+
+@stop

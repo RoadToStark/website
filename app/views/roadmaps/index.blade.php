@@ -1,3 +1,7 @@
+@extends('layouts.default')
+
+@section('content')
+
 <h1>Bienvenue sur la page des roadmaps :)</h1>
 
 @foreach($roadmaps as $key => $roadmap)
@@ -7,3 +11,5 @@
         <li>Projet : {{ $roadmap->project()->first()->name }} </li>
     </ul>
 @endforeach
+
+@stop

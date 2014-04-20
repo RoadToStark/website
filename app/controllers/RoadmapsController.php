@@ -70,9 +70,13 @@ class RoadmapsController extends \BaseController {
 	public function show($id)
 	{
 		$roadmap = Roadmap::find($id);
+		$tasks = $roadmap->tasks;
 		
 		return View::make('roadmaps.show')
-			->with('roadmap', $roadmap);
+			->with(array(
+			'roadmap'=> $roadmap,
+			'tasks'  => $tasks
+			));
 	}
 
 

@@ -23,10 +23,11 @@ class TasksController extends \BaseController {
 	 */
 	public function create()
 	{
-		$roadmaps = Roadmap::all()->lists('id', 'description');
+		if (Input::has('roadmap'))
+		$roadmap = Roadmap::find(Input::get('roadmap'));
 		
 		return View::make('tasks.create')
-			->with('roadmaps', $roadmaps);
+			->with('roadmap', $roadmap);
 	}
 
 
@@ -91,7 +92,7 @@ class TasksController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		task = Task::find($id);
+		$task = Task::find($id);
 		$roadmaps = Roadmap::all()->lists('id', 'description');
 		
 		return View::make('tasks.edit')

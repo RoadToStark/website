@@ -1,0 +1,38 @@
+#task-resume {
+	background-color: white;
+	width: 70%;
+	margin: 20px auto;
+	min-height: 80px;
+	
+	#task-header {
+		min-height: 40px;
+		
+		.task-name {
+			display: inline-block;
+			padding: 5px;
+			font-weight: 700;
+		}
+		
+		.task-start {
+			float: right;
+			display: inline-block;
+			padding: 5px;
+			color: white;
+			background-color: #45E74F;
+		}
+		
+		.task-end {
+			float: right;
+			display: inline-block;
+			padding: 5px;
+			color: white;
+			background-color: #E43E03;
+		}
+	}
+	
+	#task-body {
+		.task-description {
+			padding: 30px;
+		}
+	}
+}
