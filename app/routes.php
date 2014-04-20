@@ -14,3 +14,7 @@
 Route::get('/', 'HomeController@showHomePage');
 
 Route::resource('projects', 'ProjectsController');
+
+Route::resource('roadmaps', 'RoadmapsController');
+
+Route::resource('tasks', 'TasksController');
