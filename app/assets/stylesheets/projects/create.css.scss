@@ -1,0 +1,56 @@
+#create-project {
+	
+	input[type="text"] {
+		padding: 10px;
+		margin: 20px auto;
+		display: block;
+		text-align: center;
+		color: #18191b;
+		border: transparent;
+	}
+	
+	.title {
+		text-transform: uppercase;
+		font-size: 20px;
+	}
+	
+	.description {
+		min-width: 70%;
+		font-size: 16px;
+	}
+	
+	.submit {
+		text-align: center;
+		
+		.btn {
+			padding: 4px 16px; 
+			margin: 20px auto;
+			border: none;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: 700;
+			outline: none;
+			position: relative;
+		}
+		
+		.btn-dark {
+			background: #333;
+			color: #fff;
+			box-shadow: 0 3px #222;
+			-webkit-transition: none;
+			-moz-transition: none;
+			transition: none;
+		}
+		
+		.btn-dark:hover {
+			box-shadow: 0 2px #222;
+			top: 1px;
+		}
+		
+		.btn-dark:active {
+			box-shadow: 0 0 #222;
+			top: 3px;
+		}
+
+	}
+}

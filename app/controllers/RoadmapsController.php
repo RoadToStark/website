@@ -24,7 +24,6 @@ class RoadmapsController extends \BaseController {
 	 */
 	public function create()
 	{
-	
 		$projects = Project::all()->lists('name', 'id');
 		
 		return View::make('roadmaps.create')

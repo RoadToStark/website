@@ -1,25 +1,52 @@
-<h1>Create a Project</h1>
+@extends('layouts.default')
 
-<!-- if there are creation errors, they will show here -->
+@section('content')
+
 {{ HTML::ul($errors->all()) }}
 
-{{ Form::open(array('url' => 'projects')) }}
+<div id="create-project">
+	{{ Form::open(array('url' => 'projects')) }}
 
-	<div class="form-group">
-		{{ Form::label('name', 'Name') }}
-		{{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
-	</div>
+		{{ Form::text('name', Input::old('name'), array('class' => 'title', 'placeholder' => 'Nom du projet')) }}
 
-	<div class="form-group">
-		{{ Form::label('description', 'Description') }}
-		{{ Form::text('description', Input::old('description'), array('class' => 'form-control')) }}
-	</div>
-    
-    <div class="form-group">
-		{{ Form::label('presentation', 'Présentation') }}
-		{{ Form::text('presentation', Input::old('presentation'), array('class' => 'form-control')) }}
-	</div>
+		{{ Form::text('description', Input::old('description'), array('class' => 'description', 'placeholder' => 'Courte description du projet')) }}
+		
+		<div class="features">	
+			<section class="editor">
+				<div class="outer">
+					<div class="editorwrap">
+						<section class="entry-markdown">
+							<header class="floatingheader">
+								&nbsp;&nbsp; Présentation détaillée 
+							</header>
+							<section class="entry-markdown-content">
+								{{ Form::textarea('presentation', Input::old('presentation'), array('class' => 'form-control')) }}
+							</section>
+						</section>
+						<section class="entry-preview active">
+							<header class="floatingheader">
+							  &nbsp;&nbsp; Rendu <span class="entry-word-count">0 mots</span>
+							</header>
+							<section class="entry-preview-content">
+								<div class="rendered-markdown"></div>
+							</section>
+						</section>
+					</div>
+				</div>
+			</section>
+			
+		</div>
+		<div class="submit">
+			{{ Form::submit('Créer le projet', array('class' => 'btn btn-dark')) }}
+		</div>
+	
+		{{ Form::close() }}
+</div>
+<script>
+	$(document).ready(function () {
+	    $(".editor").ghostDown();
+	});
+</script>
 
-	{{ Form::submit('Create the Project!') }}
 
-{{ Form::close() }}
+@stop
