@@ -8388,7 +8388,8 @@ class StreamHandler extends AbstractProcessingHandler
     protected $stream;
     protected $url;
     private $errorMessage;
-    public function __construct($stream, $level = Logger::DEBUG, $bubble = true)
+    protected $filePermission;
+    public function __construct($stream, $level = Logger::DEBUG, $bubble = true, $filePermission = null)
     {
         parent::__construct($level, $bubble);
         if (is_resource($stream)) {
@@ -8396,6 +8397,7 @@ class StreamHandler extends AbstractProcessingHandler
         } else {
             $this->url = $stream;
         }
+        $this->filePermission = $filePermission;
     }
     public function close()
     {
@@ -8406,13 +8408,16 @@ class StreamHandler extends AbstractProcessingHandler
     }
     protected function write(array $record)
     {
-        if (null === $this->stream) {
+        if (!is_resource($this->stream)) {
             if (!$this->url) {
                 throw new \LogicException('Missing stream url, the stream can not be opened. This may be caused by a premature call to close().');
             }
             $this->errorMessage = null;
             set_error_handler(array($this, 'customErrorHandler'));
             $this->stream = fopen($this->url, 'a');
+            if ($this->filePermission !== null) {
+                @chmod($this->url, $this->filePermission);
+            }
             restore_error_handler();
             if (!is_resource($this->stream)) {
                 $this->stream = null;
@@ -8437,14 +8442,14 @@ class RotatingFileHandler extends StreamHandler
     protected $nextRotation;
     protected $filenameFormat;
     protected $dateFormat;
-    public function __construct($filename, $maxFiles = 0, $level = Logger::DEBUG, $bubble = true)
+    public function __construct($filename, $maxFiles = 0, $level = Logger::DEBUG, $bubble = true, $filePermission = 420)
     {
         $this->filename = $filename;
         $this->maxFiles = (int) $maxFiles;
         $this->nextRotation = new \DateTime('tomorrow');
         $this->filenameFormat = '{filename}-{date}';
         $this->dateFormat = 'Y-m-d';
-        parent::__construct($this->getTimedFilename(), $level, $bubble);
+        parent::__construct($this->getTimedFilename(), $level, $bubble, $filePermission);
     }
     public function close()
     {
@@ -8457,6 +8462,8 @@ class RotatingFileHandler extends StreamHandler
     {
         $this->filenameFormat = $filenameFormat;
         $this->dateFormat = $dateFormat;
+        $this->url = $this->getTimedFilename();
+        $this->close();
     }
     protected function write(array $record)
     {

@@ -75,9 +75,14 @@ class ProjectsController extends \BaseController {
 	public function show($id)
 	{
 		$project = Project::find($id);
+		$Parsedown = new Parsedown();
+		$presentation = $Parsedown->text($project->presentation);
         
         return View::make('projects.show')
-            ->with('project', $project);
+            ->with(array(
+            'project' => $project,
+            'presentation' => $presentation
+            ));
 	}
 
 

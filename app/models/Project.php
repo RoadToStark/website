@@ -16,7 +16,7 @@ class Project extends Eloquent {
 	 */
 	public function user() 
 	{
-		return $this->belongsTo('User');
+		return $this->belongsTo('User', 'owner');
 	}
 
 	/**

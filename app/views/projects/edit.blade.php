@@ -17,7 +17,7 @@
     
     <div class="form-group">
 		{{ Form::label('presentation', 'Présentation') }}
-		{{ Form::text('presentation', null, array('class' => 'form-control')) }}
+		{{ Form::textarea('presentation', null, array('class' => 'form-control')) }}
 	</div>
 
 	{{ Form::submit('Edit the Project!') }}
