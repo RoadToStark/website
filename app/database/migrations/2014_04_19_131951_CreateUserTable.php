@@ -65,6 +65,11 @@ class CreateUserTable extends Migration {
                 ->dateTime("updated_at")
                 ->nullable()
                 ->default(null);
+                
+            $table
+				->string("remember_token")
+				->nullable()
+				->default(null);
 
 		});
 	}

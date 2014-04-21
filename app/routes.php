@@ -18,3 +18,12 @@ Route::resource('projects', 'ProjectsController');
 Route::resource('roadmaps', 'RoadmapsController');
 
 Route::resource('tasks', 'TasksController');
+
+/* User actions routes */
+
+Route::post('/login', 'UsersController@login');
+Route::get('/register', function() {
+	return View::make('users.register');
+});
+Route::post('/register', 'UsersController@register');
+Route::get('logout', 'UsersController@logout');

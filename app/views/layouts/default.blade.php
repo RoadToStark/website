@@ -4,7 +4,7 @@
 	@include('includes.head')
 </head>
 <body>
-	<header>
+	<header id="principal">
 		@include('includes.topbar')
 	</header>
 	<div id="content">

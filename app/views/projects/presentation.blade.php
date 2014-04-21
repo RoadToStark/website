@@ -4,5 +4,5 @@
 		<span class="project-name">{{ $project->name }}</span>
 		<span class="project-description">{{ $project->description }}</span>	
 	</div>
-	<a href="{{ 'projects/' . $project->id }}" class="project-link">Voir les détails</a>
+	{{ HTML::link('projects/' . $project->id, 'Voir les détails', array('class' => 'project-link')) }}
 </div>
