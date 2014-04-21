@@ -4,8 +4,12 @@
 	@include('includes.head')
 </head>
 <body>
-	@yield('content')
-
+	<header>
+		@include('includes.topbar')
+	</header>
+	<div id="content">
+		@yield('content')
+	</div>
 	<footer>
 		@include('includes.footer')
 	</footer>

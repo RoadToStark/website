@@ -23,7 +23,10 @@ class HomeController extends BaseController {
 	 */
 	public function showHomePage()
 	{
-		return View::make('home');
+		$projects = Project::where('id', '<', 4)->get();
+		
+		return View::make('home')
+			->with('projects', $projects);
 	}
 
 }
