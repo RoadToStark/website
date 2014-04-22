@@ -1,0 +1,51 @@
+@import('../colors');
+
+#form-signup {
+	
+	.title {
+		color: $drkblue;
+	}
+	
+	input {
+		font-family: 'Share Tech Mono';
+		font-size: 14px;
+		text-align: center;
+		height: 30px;
+		width: 150px;
+		margin: 10px auto;
+		padding: 5px;
+		border: transparent;
+	}
+	
+	.user-form {
+		display: block;
+	}
+	
+	.user-passwords {
+		width: 400px;
+		margin: auto;
+		text-align: center;
+		
+		.user-form-password {
+			margin: 10px;
+		}
+	}
+	
+	.user-form-description {
+		width: 300px;
+		display: block;
+		margin: auto;
+	}
+	
+	.submit-user {
+		display: block;
+		width: 300px;
+		text-align: center;
+		cursor: pointer;
+		height: 40px;
+		margin: 20px auto;
+		background-color: $red;
+		color: white;
+		text-decoration: none;
+	}
+} 
