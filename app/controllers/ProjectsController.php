@@ -23,7 +23,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('projects.create');
+		if (Auth::check())
+			return View::make('projects.create');
+		else 
+			return Redirect::to('/')->with('message', 'Vous devez être connecté pour créer un projet');
 	}
 
 
@@ -96,8 +99,12 @@ class ProjectsController extends \BaseController {
 	{
 		$project = Project::find($id);
         
-        return View::make('projects.edit')
-            ->with('project', $project);
+        if (Auth::check())
+			return View::make('projects.edit')
+            	->with('project', $project);
+		else 
+			return Redirect::to('/')->with('message', 'Vous devez être connecté pour éditer un projet');
+        
 	}
 
 

@@ -4,7 +4,7 @@
 	</div>
 	<div id="menu">
 		<a href="/projects">Projets</a>
-		<a href="/team">Contributeurs</a>
+		<a href="">Contributeurs</a>
 	</div>
 </nav>
 <div id="login">
