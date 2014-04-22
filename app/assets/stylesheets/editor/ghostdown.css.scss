@@ -1,3 +1,4 @@
+@import('../colors');
 
 .CodeMirror {
 	font-family: monospace;
@@ -479,8 +480,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	right: 0;
 	bottom: 0;
 	font-family: Inconsolata, monospace;
-	font-size: 1.1rem;
-	line-height: 1.3em;
+	font-size: 0.95rem;
+	line-height: 1em;
 	color: #6c7379
 }
 .features .editor .CodeMirror .CodeMirror-focused, .features .editor .CodeMirror .CodeMirror-selected {
@@ -521,8 +522,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 .features .editor .cm-header {
 	color: #000;
-	font-size: 2rem;
-	line-height: 1.4em
+	font-size: 1.3rem;
+	line-height: 1em
 }
 .features .editor .cm-string, .features .editor .cm-link, .features .editor .cm-comment, .features .editor .cm-quote {
 	color: #000
@@ -536,6 +537,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 .features .editor .entry-preview-content {
 	position: absolute;
+	color: $drkblue;
 	top: 0;
 	right: 0;
 	bottom: 0;
