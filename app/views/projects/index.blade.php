@@ -1,9 +1,9 @@
-<h1>Bienvenue sur la page des projets :)</h1>
+@extends('layouts.default')
 
-@foreach($projects as $key => $project)
-    <ul>
-        <li>ID : {{ $project->id }} </li>
-        <li>Name : {{ $project->name }} </li>
-        <li>Description : {{ $project->description }} </li>
-    </ul>
-@endforeach
+@section('content')
+	<div id="home-projects">
+		@foreach($projects as $key => $project)
+			@include('projects.presentation', array('project' => $project))
+		@endforeach
+	</div>		
+@stop
