@@ -11,7 +11,7 @@ class ProjectsController extends \BaseController {
 	{
 		$projects = Project::all();
         
-        return $projects;
+        return Response::json($projects);
 	}
 
 
@@ -80,7 +80,7 @@ class ProjectsController extends \BaseController {
 		$Parsedown = new Parsedown();
 		$presentation = $Parsedown->text($project->presentation);
         
-        return $project;
+        return Response::json($projects);
 	}
 
 
