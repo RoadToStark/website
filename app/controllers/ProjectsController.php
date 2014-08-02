@@ -11,8 +11,7 @@ class ProjectsController extends \BaseController {
 	{
 		$projects = Project::all();
         
-        return View::make('projects.index')
-            ->with('projects', $projects);
+        return $projects;
 	}
 
 
@@ -81,11 +80,7 @@ class ProjectsController extends \BaseController {
 		$Parsedown = new Parsedown();
 		$presentation = $Parsedown->text($project->presentation);
         
-        return View::make('projects.show')
-            ->with(array(
-            'project' => $project,
-            'presentation' => $presentation
-            ));
+        return $project;
 	}
 
 
